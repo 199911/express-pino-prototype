@@ -27,6 +27,7 @@ const createRouter = ({ userController }) => {
     .post((req, res) => {
       const { name } = req.body;
       if (!name) {
+        req.log.info({ body: req.body }, 'Fail to create user');
         return res
           .status(400)
           .json({
@@ -34,6 +35,7 @@ const createRouter = ({ userController }) => {
           })
       }
       const user = userController.create(name);
+      req.log.info({ user }, 'Created user');
       return res.json(user);
     });
 
