@@ -1,0 +1,13 @@
+{
+  "name": "express-pino-prototype",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@sunday:199911/express-pino-prototype.git",
+  "author": "KU Lok Sun <sundaykuloksun@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.4",
+    "pino": "^5.8.1",
+    "pino-http": "^4.1.0"
+  }
+}
