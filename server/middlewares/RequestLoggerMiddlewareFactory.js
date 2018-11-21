@@ -1,5 +1,9 @@
-class RequestLoggerMiddlewareFactory {
+const pinoHttp = require('pino-http');
 
+const requestLoggerMiddlewareFactory = ({ logger }) => {
+  return pinoHttp({
+    logger
+  });
 }
 
-module.exports = RequestLoggerMiddlewareFactory;
+module.exports = requestLoggerMiddlewareFactory;
