@@ -1,8 +1,8 @@
 const pino = require('pino')
-const loggerFactory = ({ enableLog, logLevel}) => pino({
+const loggerFactory = ({ enableLog, logLevel, enablePrettyLog}) => pino({
   level: logLevel,
   enabled: enableLog,
-  prettyPrint: true
+  prettyPrint: enablePrettyLog,
 });
 
 module.exports = loggerFactory;
