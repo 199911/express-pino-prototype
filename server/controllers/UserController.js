@@ -17,12 +17,12 @@ class UserController {
       name,
     }
     this.database.push(user);
-    this.logger.info({userId: user.id}, "Created user %d", user.id);
+    this.logger.trace({userId: user.id}, "Created user %d", user.id);
     return user
   }
 
   find(id) {
-    this.logger.info({userId: id}, "Find user %d", id);
+    this.logger.trace({userId: id}, "Find user %d", id);
     const user = _.find(this.database, (u) => u.id == id);
     return user;
   }
@@ -33,7 +33,7 @@ class UserController {
       throw new Error('User not found');
     }
     user.name = name;
-    this.logger.info({userId: id}, "Updated user %d", user.id);
+    this.logger.trace({userId: id}, "Updated user %d", user.id);
     return user;
   }
 
@@ -43,7 +43,7 @@ class UserController {
       throw new Error('User not found');
     }
     _.remove(this.database, (u) => u.id == id);
-    this.logger.info({userId: id}, "Deleted user %d", user.id);
+    this.logger.trace({userId: id}, "Deleted user %d", user.id);
     return user;
   }
 }
