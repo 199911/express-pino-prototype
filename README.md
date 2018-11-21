@@ -11,7 +11,7 @@ POC on integrating logging framework Pino into expressjs
 
 ### Request log
 - Log incomming requests and response
-  - Give each request and ID
+  - Give each request an ID
   - Log response time
   - Do not log request and response body
   - Filter sensitive information
