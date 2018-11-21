@@ -3,6 +3,25 @@ var express = require('express');
 const createRouter = ({ userController }) => {
   const router = express.Router();
 
+  // For testing http logger
+  router
+    .route('/errors/:code')
+    .all((req, res) => {
+      const { code } = req.params;
+      return res
+        .status(code)
+        .json({
+          msg: 'Server Error'
+        })
+    });
+
+  // For testing http logger
+  router
+    .route('/exceptions')
+    .all(() => {
+      throw new Error("Exception");
+    })
+
   router
     .route('/users')
     .post((req, res) => {
