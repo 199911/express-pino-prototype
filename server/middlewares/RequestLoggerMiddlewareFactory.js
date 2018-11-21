@@ -1,4 +1,5 @@
 const pinoHttp = require('pino-http');
+const pinoNoir = require('pino-noir');
 const uuidv4 = require('uuid/v4');
 
 const requestLoggerMiddlewareFactory = ({ logger }) => {
@@ -19,7 +20,10 @@ const requestLoggerMiddlewareFactory = ({ logger }) => {
         return 'warn'
       }
       return 'info'
-    }
+    },
+    // Redact does not apply to logger, only apply to HTTP request logger and
+    // req.log in route
+    serializers: pinoNoir(['req.headers.authorization'], '***')
   });
 }
 

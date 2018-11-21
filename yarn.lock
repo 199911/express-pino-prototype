@@ -358,6 +358,11 @@ pino-http@^4.1.0:
     pino "^5.0.0"
     pino-std-serializers "^2.1.0"
 
+pino-noir@^2.2.1:
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/pino-noir/-/pino-noir-2.2.1.tgz#2f9bb51a8eacda976b26f412ed5af468d8f0106c"
+  integrity sha512-qGIG4fYMqokNb5Ho21YNH9uB4NELYTb9oADiuzoL2+n1gs6QyoUKaTN+7eqT4VDC6syvcyark3YP9o2UmCk32A==
+
 pino-pretty@^2.2.3:
   version "2.2.3"
   resolved "https://registry.yarnpkg.com/pino-pretty/-/pino-pretty-2.2.3.tgz#ece6029803b773a3e9a3e572de4b5ef90e40ee1b"

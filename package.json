@@ -11,6 +11,7 @@
     "lodash": "^4.17.11",
     "pino": "^5.8.1",
     "pino-http": "^4.1.0",
+    "pino-noir": "^2.2.1",
     "pino-pretty": "^2.2.3",
     "uuid": "^3.3.2"
   }
