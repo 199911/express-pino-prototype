@@ -7,8 +7,15 @@ const createRouter = ({ userController }) => {
     .route('/users')
     .post((req, res) => {
       const { name } = req.body;
+      if (!name) {
+        return res
+          .status(400)
+          .json({
+            msg: 'Missing user name'
+          })
+      }
       const user = userController.create(name);
-      res.json(user);
+      return res.json(user);
     });
 
   router
@@ -16,18 +23,37 @@ const createRouter = ({ userController }) => {
     .get((req, res) => {
       const { userId } = req.params;
       const user = userController.find(userId);
-      res.json(user);
+      if (!user) {
+        return res
+          .status(404)
+          .json({
+            msg: 'User not found'
+          })
+      }
+      return res.json(user);
     })
     .patch((req, res) => {
       const { userId } = req.params;
       const { name } = req.body;
-      const user = userController.update(userId, name);
-      res.json(user);
+      try {
+        const user = userController.update(userId, name);
+        res.json(user);
+      } catch (err) {
+        return res
+          .status(404)
+          .json({ msg: err.message });
+      }
     })
     .delete((req, res) => {
       const { userId } = req.params;
-      userController.delete(userId);
-      res.json({});
+      try {
+        const user = userController.delete(userId);
+        res.json(user);
+      } catch (err) {
+        return res
+          .status(404)
+          .json({ msg: err.message });
+      }
     });
   return router;
 };

@@ -26,12 +26,20 @@ class UserController {
 
   update(id, name) {
     const user = this.find(id);
+    if (!user) {
+      throw new Error('User not found');
+    }
     user.name = name;
     return user;
   }
 
   delete(id) {
+    const user = this.find(id);
+    if (!user) {
+      throw new Error('User not found');
+    }
     _.remove(this.database, (u) => u.id == id);
+    return user;
   }
 }
 
