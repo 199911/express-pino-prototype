@@ -1,5 +1,5 @@
 module.exports = {
   enableLog: true,
   logLevel: 'trace',
-  enablePrettyLog: true,
+  enablePrettyLog: false,
 };
