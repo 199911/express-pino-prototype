@@ -21,9 +21,9 @@ POC on integrating logging framework Pino into expressjs
 
 ### Log levels
 
-TRACE: Every business logic action
-DEBUG: For debug purpose
-INFO: Every web request with 2xx, 3xx status, also action of important services
-WARN: Every web request with 4xx status
-ERROR: Every web request with 5xx status
-FATAL: Unknown execution flow, or server crashing error
+- TRACE: Every business logic action
+- DEBUG: For debug purpose
+- INFO: Every web request with 2xx, 3xx status, also action of important services
+- WARN: Every web request with 4xx status
+- ERROR: Every web request with 5xx status
+- FATAL: Unknown execution flow, or server crashing error
